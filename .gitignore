@@ -1,0 +1,8 @@
+.DS_Store
+
+# Helm chart automated files
+/charts/*/charts
+
+# Editor configs
+.vscode
+.idea

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "gitnoter.fullname" . }}-backend
+  labels:
+    {{- include "gitnoter.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.backend.type }}
+  ports:
+    - port: {{ .Values.service.backend.port }}
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "gitnoter.selectorLabels" . | nindent 4 }}-backend

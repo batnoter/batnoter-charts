@@ -19,6 +19,7 @@ spec:
       {{- end }}
       labels:
         {{- include "batnoter.selectorLabels" . | nindent 8 }}-frontend
+        date: "{{ now | unixEpoch }}"
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:

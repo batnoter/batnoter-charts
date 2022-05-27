@@ -3,6 +3,16 @@ entries:
   gitnoter:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2022-05-27T06:32:18.005774853Z"
+    description: A Helm chart for Kubernetes
+    digest: 5b6574be009121bf3eafa597b46af89adcdb59497d029cc65dffd803c4ec436a
+    name: gitnoter
+    type: application
+    urls:
+    - https://github.com/git-noter/gitnoter-charts/releases/download/gitnoter-0.1.2/gitnoter-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2022-04-08T13:13:54.129399134Z"
     description: A Helm chart for Kubernetes
     digest: 8eb4618541babe80c5cc75d7ba91eb908756d8acbdcf2427c1125ef29a34ab65
@@ -21,4 +31,4 @@ entries:
     urls:
     - https://github.com/vivekweb2013/gitnoter-charts/releases/download/gitnoter-0.1.0/gitnoter-0.1.0.tgz
     version: 0.1.0
-generated: "2022-04-08T13:13:54.129407835Z"
+generated: "2022-05-27T06:32:18.005875153Z"

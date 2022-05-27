@@ -3,10 +3,10 @@ This project contains the helm charts for batnoter deployment on kubernetes clus
 
 The github wokflows present in this repo will release and publish the helm chart on push event. This setup is created by referencing the [charts-repo-actions-demo](https://github.com/helm/charts-repo-actions-demo) by helm.
 
-Helm Repository URL - [https://vivekweb2013.github.io/batnoter-charts](https://vivekweb2013.github.io/batnoter-charts)
+Helm Repository URL - [https://batnoter.github.io/batnoter-charts](https://batnoter.github.io/batnoter-charts)
 
 Helm Repository Metadata URL - 
-[https://vivekweb2013.github.io/batnoter-charts/index.yaml](https://vivekweb2013.github.io/batnoter-charts/index.yaml)
+[https://batnoter.github.io/batnoter-charts/index.yaml](https://batnoter.github.io/batnoter-charts/index.yaml)
 
 **Note:** Make sure to update the chart version before pushing your changes to `main` branch. Otherwise the workflow will fail because release and tag already exist with current version.
 
@@ -87,10 +87,11 @@ kubectl get secret postgres-secret -o jsonpath='{.data}' -n bn
 #### Create `auth-secret` to allow user authentication & authorization
 ```shell
 kubectl create secret generic auth-secret \
-	--from-literal=OAUTH2_GITHUB_CLIENTID=<GITHUB_CLIENT_ID> \
-	--from-literal=OAUTH2_GITHUB_CLIENTSECRET=<GITHUB_CLIENT_SECRET> \
-  --from-literal=OAUTH2_GITHUB_REDIRECTURL=http://batnoter.com/api/v1/oauth2/github/callback \
-	--from-literal=SECRETKEY=<APP_JWT_SECRET> -n bn
+  --from-literal=OAUTH2_GITHUB_CLIENTID=<GITHUB_CLIENT_ID> \
+  --from-literal=OAUTH2_GITHUB_CLIENTSECRET=<GITHUB_CLIENT_SECRET> \
+  --from-literal=OAUTH2_GITHUB_REDIRECTURL=https://batnoter.com/api/v1/oauth2/github/callback \
+  --from-literal=APP_SECRETKEY=<APP_JWT_SECRET> \
+  --from-literal=APP_CLIENTURL=https://batnoter.com -n bn
 ```
 
 **NOTE:** Replace `<GITHUB_CLIENT_ID>` `<GITHUB_CLIENT_SECRET>` and `<APP_JWT_SECRET>` with correct values.
@@ -103,7 +104,7 @@ kubectl get secret auth-secret -o jsonpath='{.data}' -n bn
 #### Install the chart with below command
 Use the batnoter helm repository to install the application.
 ```shell
-helm repo add batnoter https://vivekweb2013.github.io/batnoter-charts
+helm repo add batnoter https://batnoter.github.io/batnoter-charts
 helm repo update
 helm install batnoter batnoter/batnoter -n bn --create-namespace
 ```

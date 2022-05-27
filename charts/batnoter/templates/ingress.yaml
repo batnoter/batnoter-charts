@@ -30,15 +30,15 @@ spec:
             path: /
             backend:
               service:
-                name: {{ $fullName }}-frontend
+                name: {{ $fullName }}-ui
                 port:
-                  number: {{ $.Values.service.frontend.port }}
+                  number: {{ $.Values.service.ui.port }}
           - pathType: Prefix
             path: /api/
             backend:
               service:
-                name: {{ $fullName }}-backend
+                name: {{ $fullName }}-api
                 port:
-                  number: {{ $.Values.service.backend.port }}
+                  number: {{ $.Values.service.api.port }}
     {{- end }}
 {{- end }}

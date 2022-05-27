@@ -6,7 +6,7 @@ email: batnoterapp@gmail.com
 replicaCount: 1
 
 image:
-  repository: ghcr.io/vivekweb2013/batnoter
+  repository: ghcr.io/batnoter/batnoter
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "main"
@@ -39,10 +39,10 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  frontend:
+  ui:
     type: ClusterIP
     port: 3000
-  backend:
+  api:
     type: ClusterIP
     port: 8080
 

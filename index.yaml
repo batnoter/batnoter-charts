@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  batnoter:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-06-12T06:18:35.591235026Z"
+    description: A Helm chart for Kubernetes
+    digest: bd64f6bf9c1665e177691151e9367363ab66dc53d93ca3544d14fe3ae9b3f9f1
+    name: batnoter
+    type: application
+    urls:
+    - https://github.com/git-noter/gitnoter-charts/releases/download/batnoter-0.1.2/batnoter-0.1.2.tgz
+    version: 0.1.2
   gitnoter:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -31,4 +42,4 @@ entries:
     urls:
     - https://github.com/vivekweb2013/gitnoter-charts/releases/download/gitnoter-0.1.0/gitnoter-0.1.0.tgz
     version: 0.1.0
-generated: "2022-05-27T06:32:18.005875153Z"
+generated: "2022-06-12T06:18:35.591247726Z"
